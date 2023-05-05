@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./style.css";
 
 const App = () => {
   const [text, setText] = useState("");
@@ -8,7 +9,7 @@ const App = () => {
 
   const getUserFollowers = async () => {
     const { data } = await axios(
-      `https://api.github.com/users/${text}/followers`
+      `https://api.github.com/users/${text}/followers?per_page=100`
     );
     setFollowers(data.map((follower) => follower.login));
     console.log(followers);
@@ -16,7 +17,7 @@ const App = () => {
 
   const getUserFollowing = async () => {
     const { data } = await axios(
-      `https://api.github.com/users/${text}/following`
+      `https://api.github.com/users/${text}/following?per_page=100`
     );
     setFollowings(data.map((following) => following.login));
   };
@@ -25,11 +26,9 @@ const App = () => {
     e.preventDefault();
     getUserFollowers();
     getUserFollowing();
-    const scumBag = () => {
-      const x = followings.filter((person) => !followers.includes(person));
-      console.log(x);
-    };
-    console.log(scumBag());
+    console.log(followers.includes("AbdeenM"));
+    const scumBags = followings.filter((scum) => !followers.includes(scum));
+    console.log(scumBags);
   };
   return (
     <div>
@@ -42,13 +41,23 @@ const App = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div>
+      <div className="list">
         <ul>
           {followers.sort().map((follower, index) => (
             <p key={follower}>
               {index + 1} - {follower}
             </p>
           ))}
+        </ul>
+        <ul className="second">
+          <h3>You are following but they don't follow you back.</h3>
+          {followings
+            .filter((scum) => !followers.includes(scum))
+            .map((scums, index) => (
+              <p key={scums}>
+                {index + 1} - {scums.toLowerCase()}
+              </p>
+            ))}
         </ul>
       </div>
     </div>
