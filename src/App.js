@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css";
 
 const App = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState("bekirbali");
   const [followings, setFollowings] = useState([]);
   const [followers, setFollowers] = useState([]);
 
@@ -20,6 +20,7 @@ const App = () => {
       `https://api.github.com/users/${text}/following?per_page=100`
     );
     setFollowings(data.map((following) => following.login));
+    setText("");
   };
 
   const handleSubmit = (e) => {
@@ -30,6 +31,10 @@ const App = () => {
     const scumBags = followings.filter((scum) => !followers.includes(scum));
     console.log(scumBags);
   };
+  useEffect(() => {
+    getUserFollowers();
+    getUserFollowing();
+  }, []);
   return (
     <div>
       <form onSubmit={handleSubmit}>
