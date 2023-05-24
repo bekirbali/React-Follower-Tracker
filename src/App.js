@@ -48,10 +48,19 @@ const App = () => {
         <button type="submit">Search</button>
       </form>
       <div className="list">
+        <h2>Followers</h2>
         <ul>
           {followers.sort().map((follower, index) => (
             <p key={follower}>
               {index + 1} - {follower}
+            </p>
+          ))}
+        </ul>
+        <h2>Followings</h2>
+        <ul>
+          {followings.sort().map((following, index) => (
+            <p key={following}>
+              {index + 1} - {following}
             </p>
           ))}
         </ul>
