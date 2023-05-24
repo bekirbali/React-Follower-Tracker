@@ -20,6 +20,7 @@ const App = () => {
       `https://api.github.com/users/${text}/following?per_page=100`
     );
     setFollowings(data.map((following) => following.login));
+    console.log(followings);
     setText("");
   };
 
@@ -27,13 +28,13 @@ const App = () => {
     e.preventDefault();
     getUserFollowers();
     getUserFollowing();
-    console.log(followers.includes("AbdeenM"));
     const scumBags = followings.filter((scum) => !followers.includes(scum));
     console.log(scumBags);
   };
   useEffect(() => {
     getUserFollowers();
     getUserFollowing();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
@@ -54,6 +55,7 @@ const App = () => {
             </p>
           ))}
         </ul>
+        {/* the they are not following me */}
         <ul className="second">
           <h3>You are following but they don't follow you back.</h3>
           {followings
@@ -61,6 +63,18 @@ const App = () => {
             .map((scums, index) => (
               <p key={scums}>
                 {index + 1} - {scums.toLowerCase()}
+              </p>
+            ))}
+        </ul>
+
+        {/* these I forgot to follow */}
+        <ul className="second">
+          <h3>You are not following but they are following you.</h3>
+          {followers
+            .filter((follower) => !followings.includes(follower))
+            .map((follower, index) => (
+              <p key={follower}>
+                {index + 1} - {follower.toLowerCase()}
               </p>
             ))}
         </ul>
