@@ -1,7 +1,8 @@
-export const getUserFollowers = async () => {
+import axios from "axios";
+
+export const getUserFollowers = async (text) => {
   const { data } = await axios(
     `https://api.github.com/users/${text}/followers?per_page=100`
   );
-  setFollowers(data.map((follower) => follower.login));
-  console.log(followers);
+  return data;
 };
