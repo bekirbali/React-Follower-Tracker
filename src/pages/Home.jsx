@@ -12,13 +12,17 @@ const Home = ({ getFollowers, getFollowing, followings, followers, text }) => {
   }, []);
   return (
     <div className="list">
-      <FollowersList followers={followers} />
-      <FollowingsList followings={followings} />
-      {/* they are not following me */}
-      <MustUnfList followers={followers} followings={followings} />
+      <section className="section-1">
+        {/* they are not following me */}
+        <MustUnfList followers={followers} followings={followings} />
 
-      {/* these I forgot to follow */}
-      <MustFollowList followers={followers} followings={followings} />
+        {/* these I forgot to follow */}
+        <MustFollowList followers={followers} followings={followings} />
+      </section>
+      <section className="section-2">
+        <FollowersList followers={followers} />
+        <FollowingsList followings={followings} />
+      </section>
     </div>
   );
 };
