@@ -30,3 +30,9 @@ body {
 .list .second p {
   margin-bottom: 0.5rem;
 }
+
+.home-page {
+  background-color: slateblue;
+  height: 400px;
+  color: white;
+}

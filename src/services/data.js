@@ -1,8 +1,13 @@
 import axios from "axios";
 
 export const getUserFollowers = async (text) => {
-  const { data } = await axios(
+  return await axios(
     `https://api.github.com/users/${text}/followers?per_page=100`
   );
-  return data;
+};
+
+export const getUserFollowings = async (text) => {
+  return await axios(
+    `https://api.github.com/users/${text}/following?per_page=100`
+  );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css";
+import Home from "./pages/Home";
 
 const App = () => {
   const [text, setText] = useState("bekirbali");
@@ -12,7 +13,6 @@ const App = () => {
       `https://api.github.com/users/${text}/followers?per_page=100`
     );
     setFollowers(data.map((follower) => follower.login));
-    console.log(followers);
   };
 
   const getUserFollowing = async () => {
@@ -20,7 +20,6 @@ const App = () => {
       `https://api.github.com/users/${text}/following?per_page=100`
     );
     setFollowings(data.map((following) => following.login));
-    console.log(followings);
     setText("");
   };
 
@@ -47,6 +46,7 @@ const App = () => {
         />
         <button type="submit">Search</button>
       </form>
+      <Home />
       <div className="list">
         <h2>Followers</h2>
         <ul>
