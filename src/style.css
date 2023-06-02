@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: default;
 }
 body {
   padding: 1rem;
@@ -29,4 +30,34 @@ body {
 }
 .list .second p {
   margin-bottom: 0.5rem;
+}
+
+.my-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.my-form input {
+  border: 1px solid gray;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 256px;
+  cursor: auto;
+}
+
+.my-form button {
+  border: none;
+  background-color: #383847;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 128px;
+  color: white;
+}
+
+.my-form button:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #555566;
+  cursor: pointer;
 }
