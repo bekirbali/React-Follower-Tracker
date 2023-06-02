@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import "./style.css";
 import Home from "./pages/Home";
-
 import { getUserFollowers, getUserFollowings } from "./services/data";
 import Form from "./components/Form";
 
