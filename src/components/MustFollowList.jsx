@@ -1,5 +1,3 @@
-import React from "react";
-
 const MustFollowList = ({ followers, followings }) => {
   return (
     <ul className="second">

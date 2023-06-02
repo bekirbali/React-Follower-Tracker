@@ -1,5 +1,3 @@
-import React from "react";
-
 const MustUnfList = ({ followings, followers }) => {
   return (
     <ul className="second">
