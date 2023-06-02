@@ -4,12 +4,12 @@ import FollowersList from "../components/FollowersList";
 import MustUnfList from "../components/MustUnfList";
 import MustFollowList from "../components/MustFollowList";
 
-const Home = ({ getFollowers, getFollowing, followings, followers }) => {
+const Home = ({ getFollowers, getFollowing, followings, followers, text }) => {
   useEffect(() => {
     getFollowers();
     getFollowing();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [text]);
   return (
     <div className="list">
       <FollowersList followers={followers} />
