@@ -9,12 +9,28 @@ body {
   text-align: center;
 }
 
+h2 {
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid rgb(37, 23, 124);
+}
+
 .list {
   background-color: #f1f1f5;
   display: flex;
-  margin-top: 1rem;
-  text-align: left;
-  gap: 2rem;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.list .section-1 {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.list .section-2 {
+  display: flex;
+  justify-content: space-around;
 }
 
 .list .second {

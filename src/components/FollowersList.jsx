@@ -1,8 +1,8 @@
 const FollowersList = ({ followers }) => {
   return (
     <>
-      <h2>Followers</h2>
       <ul>
+        <h2>Followers</h2>
         {followers?.sort().map((follower, index) => (
           <p key={follower}>
             {index + 1} - {follower}
