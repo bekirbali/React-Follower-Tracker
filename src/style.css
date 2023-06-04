@@ -28,14 +28,14 @@ h2 {
   justify-content: center;
   margin-bottom: 1rem;
   height: 500px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .list .section-2 {
   display: flex;
   justify-content: space-around;
   height: 500px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .list .second {
