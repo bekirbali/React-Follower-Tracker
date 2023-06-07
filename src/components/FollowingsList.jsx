@@ -2,7 +2,7 @@ const FollowingsList = ({ followings }) => {
   return (
     <>
       <ul className="follows">
-        <h2>Followings</h2>
+        <h2>Followings ({followings.length})</h2>
         {followings.sort().map((following, index) => (
           <p key={following}>
             {index + 1} - {following}
