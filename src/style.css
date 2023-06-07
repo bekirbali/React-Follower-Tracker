@@ -11,7 +11,8 @@ body {
 
 h2 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid rgb(37, 23, 124);
+  border-bottom: 2px solid rgb(57, 142, 182);
+  padding-bottom: 0.2rem;
 }
 
 ul {
