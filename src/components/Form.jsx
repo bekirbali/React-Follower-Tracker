@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const Form = ({
   getFollowing,
@@ -17,9 +17,9 @@ const Form = ({
     console.log(scumBags);
   };
 
-  // useEffect(() => {
-  //   ref.current.focus();
-  // }, [followers]);
+  useEffect(() => {
+    ref.current.focus();
+  }, [followers]);
   return (
     <form onSubmit={handleSubmit} className="my-form">
       <input
