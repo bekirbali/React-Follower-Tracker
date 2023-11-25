@@ -25,6 +25,7 @@ ul {
   color: white;
   height: fit-content;
   box-shadow: 0 0 0.5rem 0.5rem rgba(138, 219, 138, 0.726);
+  text-align: left;
 }
 
 .list {
